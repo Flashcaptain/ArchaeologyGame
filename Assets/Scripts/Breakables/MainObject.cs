@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MainObject : Breakable
 {
+    [SerializeField]
+    private RemoveLayers _manager;
+
     private string _name;
     private int _outlines = 0;
 
@@ -17,7 +20,7 @@ public class MainObject : Breakable
 
     protected override void Remove()
     {
-        Debug.Log("Defeat"); 
+        _manager.TriggerLevelEnd(false);
     }
 
     public void AddChild()
@@ -30,7 +33,7 @@ public class MainObject : Breakable
         _outlines--;
         if (_outlines == 0)
         {
-            Debug.Log("Victory");
+            _manager.TriggerLevelEnd(true);
         }
     }
 }
