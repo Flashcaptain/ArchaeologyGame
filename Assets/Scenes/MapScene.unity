@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maps:
-  - _name: Level1
+  - _name: TestSceneLex
     _locked: 0
     _completed: 0
     _highscore: 0
