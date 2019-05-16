@@ -7,6 +7,8 @@ public class TouchManager : MonoBehaviour
 {
     public static TouchManager Instance;
 
+    public bool ZoomedIn = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,7 +26,8 @@ public class TouchManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Vector3 pos = new Vector3((Input.GetTouch(0).position.x - 960) / 100, (Input.GetTouch(0).position.y - 540) / 100, 0);
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            pos = new Vector3(pos.x, pos.y, 0);
             return pos;
         }
         return Vector3.zero;
