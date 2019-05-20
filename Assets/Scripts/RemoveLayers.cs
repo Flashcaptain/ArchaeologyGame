@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -66,7 +67,7 @@ public class RemoveLayers : MonoBehaviour
                     Debug.Log("Trowel");
                 }else if (_equippedTools == Tools.MagnifyingGlass && (Input.GetMouseButtonDown(0) || Input.GetTouch(0).phase == TouchPhase.Began))
                 {
-                    if (hit.collider.gameObject.GetComponent<Button>() != null) // <<<zorg dat dit if statement zorgt dat er niet gezoomed word als je op de UI drukt
+                    if (!EventSystem.current.IsPointerOverGameObject(0))
                     {
                         Camera cam = Camera.main;
                         if (_zoomedIn)
