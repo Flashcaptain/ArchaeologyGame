@@ -47,9 +47,9 @@ public class MapFiller : MonoBehaviour
 
     private void SpawnDirt()
     {
-        for (int x = -_sizeX; x <= _sizeX; x++)
+        for (float x = -_sizeX; x <= _sizeX; x += 0.2f)
         {
-            for (int y = -_sizeY; y <= _sizeY; y++)
+            for (float y = -_sizeY; y <= _sizeY; y += 0.2f)
             {
                 Instantiate(_dirt[Random.Range(0,_dirt.Count)], new Vector3(x, y, 1), transform.rotation = Quaternion.Euler(0, 0, Random.RandomRange(0, 360)));
             }
