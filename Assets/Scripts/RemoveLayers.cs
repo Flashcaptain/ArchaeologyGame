@@ -14,10 +14,7 @@ public class RemoveLayers : MonoBehaviour
     private List<int> _toolDamage;
 
     [SerializeField]
-    private GameObject _victoryUI;
-
-    [SerializeField]
-    private GameObject _defeatUI;
+    private GameObject _levelEndUI;
 
     [SerializeField]
     private float _defaultCameraSize = 5f;
@@ -94,17 +91,22 @@ public class RemoveLayers : MonoBehaviour
         }
     }
 
-    public void TriggerLevelEnd(bool victory)
+    public void TriggerLevelEnd(bool victory, int durability)
     {
         _gameInProgress = false;
+        _levelEndUI.SetActive(true);
+        LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
 
         if (victory)
         {
-            _victoryUI.SetActive(true);
+            ui._titleText.text = "Victory";
+            ui._durabilityText.text = "The value remaining value is " + durability;
+            ui._backToMapButton.SetActive(true);
         }
         else
         {
-            _defeatUI.SetActive(true);
+            ui._titleText.text = "Defeat";
+            ui._retryButton.SetActive(true);
         }
     }
 

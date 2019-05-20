@@ -20,7 +20,7 @@ public class MainObject : Breakable
 
     protected override void Remove()
     {
-        _manager.TriggerLevelEnd(false);
+        _manager.TriggerLevelEnd(false, _durability);
     }
 
     public void AddChild()
@@ -33,7 +33,7 @@ public class MainObject : Breakable
         _outlines--;
         if (_outlines == 0)
         {
-            _manager.TriggerLevelEnd(true);
+            _manager.TriggerLevelEnd(true, _durability);
         }
     }
 }
