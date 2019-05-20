@@ -20,7 +20,7 @@ public class MainObject : Breakable
 
     protected override void Remove()
     {
-        _manager.TriggerLevelEnd(false, _durability);
+        _manager.TriggerLevelEnd(false, _currentDurability);
     }
 
     public void AddChild()
@@ -33,7 +33,14 @@ public class MainObject : Breakable
         _outlines--;
         if (_outlines == 0)
         {
-            _manager.TriggerLevelEnd(true, _durability);
+            _manager.TriggerLevelEnd(true, _currentDurability);
         }
+    }
+
+    private int GetDurabilityPercent(int currentDurability, int totalDurability)
+    {
+        float val = currentDurability / totalDurability * 100;
+        int intVal = Mathf.RoundToInt(val);
+        return intVal;
     }
 }

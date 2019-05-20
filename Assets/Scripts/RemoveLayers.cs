@@ -91,7 +91,7 @@ public class RemoveLayers : MonoBehaviour
         }
     }
 
-    public void TriggerLevelEnd(bool victory, int durability)
+    public void TriggerLevelEnd(bool victory, int percentage)
     {
         _gameInProgress = false;
         _levelEndUI.SetActive(true);
@@ -100,7 +100,7 @@ public class RemoveLayers : MonoBehaviour
         if (victory)
         {
             ui._titleText.text = "Victory";
-            ui._durabilityText.text = "The value remaining value is " + durability;
+            ui._durabilityText.text = "The value remaining value is " + percentage + "%";
             ui._backToMapButton.SetActive(true);
         }
         else
