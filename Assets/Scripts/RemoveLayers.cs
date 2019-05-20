@@ -22,6 +22,15 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private float _zoomMultiplier = 2f;
 
+    [SerializeField]
+    private int _timeMinutes;
+
+    [SerializeField]
+    private int _timeSeconds;
+
+    [SerializeField]
+    private Text _timeText;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
@@ -34,6 +43,7 @@ public class RemoveLayers : MonoBehaviour
     private void Start()
     {
         Camera.main.orthographicSize = _defaultCameraSize;
+        StartCoroutine(Timer());
     }
 
     private void Update()
@@ -122,7 +132,46 @@ public class RemoveLayers : MonoBehaviour
         if (breakable != null)
         {
             Debug.Log("hit breakable");
-            breakable.RemoveDurability(damage , _equippedTools);
+            breakable.RemoveDurability(damage, _equippedTools);
+        }
+    }
+
+    private IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1);
+
+        if (_timeSeconds == 0 && _timeMinutes == 0)
+        {
+            TriggerLevelEnd(false, 0);
+            LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
+            ui._durabilityText.text = "You ran out of time.";
+        }
+        else if (_gameInProgress)
+        {
+            _timeSeconds--;
+            if (_timeSeconds == 0 && _timeMinutes != 0)
+            {
+                _timeMinutes--;
+                _timeSeconds = 60;
+            }
+
+            if (_timeMinutes < 10 && _timeSeconds < 10)
+            {
+                _timeText.text = "0" + _timeMinutes + ":0" + _timeSeconds;
+            }
+            else if (_timeMinutes < 10)
+            {
+                _timeText.text = "0" + _timeMinutes + ":" + _timeSeconds;
+            }
+            else if (_timeSeconds < 10)
+            {
+                _timeText.text = _timeMinutes + ":0" + _timeSeconds;
+            }
+            else
+            {
+                _timeText.text = _timeMinutes + ":" + _timeSeconds;
+            }
+            StartCoroutine(Timer());
         }
     }
 }
