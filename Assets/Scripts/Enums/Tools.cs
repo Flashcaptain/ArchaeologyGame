@@ -1,8 +1,8 @@
-﻿
-public enum Tools
+﻿public enum Tools
 {
     None,
     Shovel,
     Brush,
-    Trowel
+    Trowel,
+    MagnifyingGlass
 }
