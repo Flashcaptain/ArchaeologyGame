@@ -47,7 +47,7 @@ public class MapFiller : MonoBehaviour
 
     private void SpawnDirt()
     {
-        for (float x = -_sizeX; x <= _sizeX; x += 0.2f)
+        for (float x = -_sizeX; x <= _sizeX; x += 0.5f)
         {
             for (float y = -_sizeY; y <= _sizeY; y += 0.2f)
             {
