@@ -8,6 +8,8 @@ public class Map
 {
     public string _name = "Default";
 
+    public string _objectName = "Default Object";
+
     public bool _locked = false;
 
     public bool _completed = false;
