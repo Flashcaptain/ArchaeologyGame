@@ -1198,6 +1198,10 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
+  - _name: Level3
+    _locked: 1
+    _completed: 0
+    _highscore: 0
 --- !u!4 &1619533450
 Transform:
   m_ObjectHideFlags: 0

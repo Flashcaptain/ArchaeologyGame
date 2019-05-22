@@ -11,6 +11,8 @@ public class UnlockManager : MonoBehaviour
 
     private Map _currentMap;
 
+    private int _highestCompletedLevel = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -38,11 +40,22 @@ public class UnlockManager : MonoBehaviour
     {
         int index = _maps.IndexOf(_currentMap);
 
+        if (index > _highestCompletedLevel)
+        {
+            _highestCompletedLevel = index;
+        }
+
         _maps[index]._completed = true;
         if (highscore > _maps[index]._highscore)
         {
             _maps[index]._highscore = highscore;
         }
         _maps[index + 1]._locked = false;
+    }
+
+    public Map GetMap(int index)
+    {
+        Map currentMap = _maps[index];
+        return currentMap;
     }
 }
