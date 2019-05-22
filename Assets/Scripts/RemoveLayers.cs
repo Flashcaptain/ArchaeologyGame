@@ -63,15 +63,12 @@ public class RemoveLayers : MonoBehaviour
 
                 if (_equippedTools == Tools.Shovel && (Input.GetMouseButtonDown(0) || Input.GetTouch(0).phase == TouchPhase.Began))
                 {
-                    Debug.Log("Shovel");
                 }
                 else if (_equippedTools == Tools.Brush && (Input.GetMouseButton(0) || Input.GetTouch(0).phase == TouchPhase.Moved))
                 {
-                    Debug.Log("Brush");
                 }
                 else if (_equippedTools == Tools.Trowel && (Input.GetMouseButton(0) || Input.GetTouch(0).phase == TouchPhase.Moved))
                 {
-                    Debug.Log("Trowel");
                 }else if (_equippedTools == Tools.MagnifyingGlass && (Input.GetMouseButtonDown(0) || Input.GetTouch(0).phase == TouchPhase.Began))
                 {
                     if (!EventSystem.current.IsPointerOverGameObject(0))
@@ -96,7 +93,6 @@ public class RemoveLayers : MonoBehaviour
 
                 else return;
                 RemoveLayer(hit, _toolDamage[(int)_equippedTools]);
-                Debug.Log("RemoveLayer");
             }
         }
     }
@@ -132,7 +128,6 @@ public class RemoveLayers : MonoBehaviour
 
         if (breakable != null)
         {
-            Debug.Log("hit breakable");
             breakable.RemoveDurability(damage, _equippedTools);
         }
     }

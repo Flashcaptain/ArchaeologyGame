@@ -1,11 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainObject : Breakable
 {
     [SerializeField]
     private RemoveLayers _manager;
+
+    [SerializeField]
+    private Slider _slider;
+
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
+    [SerializeField]
+    private List<Sprite> _sprites;
 
     private string _name;
     private int _outlines = 0;
@@ -15,6 +25,10 @@ public class MainObject : Breakable
         if (_equippedTools == Tools.Trowel || _equippedTools == Tools.Shovel)
         {
             base.RemoveDurability(damage, _equippedTools);
+            _slider.maxValue = _durability;
+            _slider.value = _durability - _currentDurability;
+            Debug.Log(GetDurabilityPercent() / ((_sprites.Count - 1) * (_sprites.Count - 1)));
+            _spriteRenderer.sprite = _sprites[(_sprites.Count - 1) * (_sprites.Count - 1)/Mathf.RoundToInt(GetDurabilityPercent())];
         }
     }
 
@@ -37,9 +51,9 @@ public class MainObject : Breakable
         }
     }
 
-    private int GetDurabilityPercent(int currentDurability, int totalDurability)
+    private int GetDurabilityPercent()
     {
-        float val = currentDurability / totalDurability * 100;
+        float val = _currentDurability / _durability * 100;
         int intVal = Mathf.RoundToInt(val);
         return intVal;
     }

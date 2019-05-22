@@ -16,13 +16,10 @@ public abstract class Breakable : MonoBehaviour
 
     public virtual void RemoveDurability(int damage, Tools _equippedTools)
     {
-        Debug.Log("damage: " + damage);
         _currentDurability -= damage;
-        Debug.Log("durability: " + _currentDurability);
         if (_currentDurability <= 0)
         {
             Remove();
-            Debug.Log("remove");
         }
     }
 
