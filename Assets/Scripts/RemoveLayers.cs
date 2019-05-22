@@ -112,6 +112,7 @@ public class RemoveLayers : MonoBehaviour
             ui._titleText.text = "Victory";
             ui._durabilityText.text = "The value remaining value is " + percentage + "%";
             ui._backToMapButton.SetActive(true);
+            UnlockManager.Instance.CompleteCurrentLevel(percentage);
         }
         else
         {
