@@ -19,6 +19,7 @@ public abstract class Breakable : MonoBehaviour
         _currentDurability -= damage;
         if (_currentDurability <= 0)
         {
+            _currentDurability = 0;
             Remove();
         }
     }
