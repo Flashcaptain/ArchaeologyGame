@@ -9,7 +9,7 @@ public class UnlockManager : MonoBehaviour
 
     public List<Map> _maps = new List<Map>();
 
-    private Map _currentMap;
+    public Map _currentMap;
 
     private int _highestCompletedLevel = 0;
 

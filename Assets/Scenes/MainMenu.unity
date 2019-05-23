@@ -1190,19 +1190,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maps:
-  - _name: Level1
+  - _mainObject: {fileID: 2077934429311146142, guid: 96e12d89634aff049ac4c9d9bebf9220,
+      type: 3}
+    _name: Level1
     _objectName: Coin
     _locked: 0
     _completed: 0
     _highscore: 0
-  - _name: Level2
+  - _mainObject: {fileID: 8991333050452773342, guid: 46abaddd18697ca4d926228d3b199cee,
+      type: 3}
+    _name: Level2
     _objectName: Lavabo
     _locked: 1
     _completed: 0
     _highscore: 0
-  - _name: Level3
+  - _mainObject: {fileID: 0}
+    _name: Level3
     _objectName: Default Object
     _locked: 1
+    _completed: 0
+    _highscore: 0
+  _currentMap:
+    _mainObject: {fileID: 0}
+    _name: Default
+    _objectName: Default Object
+    _locked: 0
     _completed: 0
     _highscore: 0
 --- !u!4 &1619533450

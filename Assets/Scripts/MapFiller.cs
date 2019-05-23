@@ -5,10 +5,13 @@ using UnityEngine;
 public class MapFiller : MonoBehaviour
 {
     [SerializeField]
-    private int _sizeX;
+    private float _sizeX;
 
     [SerializeField]
-    private int _sizeY;
+    private float _sizeY;
+
+    [SerializeField]
+    private float _offSet;
 
     [SerializeField]
     private List<GroundObject> _grass;
@@ -16,23 +19,38 @@ public class MapFiller : MonoBehaviour
     [SerializeField]
     private List<GroundObject> _dirt;
 
+    private MainObject _mainObject;
+    private Vector2 _centerPos;
+
     private void Start()
     {
+        _mainObject = UnlockManager.Instance._currentMap._mainObject;
+
+        float spawnSizeX = _sizeX - _offSet;
+        float spawnSizeY = _sizeY - _offSet;
+        _centerPos = new Vector2(Random.Range(-spawnSizeX, spawnSizeX), Random.Range(-spawnSizeY, spawnSizeY));
+
+        SpawnMainObject();
         SpawnGrass();
         SpawnDirt();
     }
 
+    private void SpawnMainObject()
+    {
+        if (_mainObject == null)
+        {
+            return;
+        }
+        Instantiate(_mainObject.gameObject, new Vector3(_centerPos.x, _centerPos.y, 3), _mainObject.gameObject.transform.rotation);
+    }
+
     private void SpawnGrass()
     {
-        int spawnSizeX = _sizeX - 1;
-        int spawnSizeY = _sizeY - 1;
-        Vector2 centerPos = new Vector2(Random.Range(-spawnSizeX, spawnSizeX), Random.Range(-spawnSizeY, spawnSizeY));
-
-        for (int x = -_sizeX; x <= _sizeX; x++)
+        for (float x = -_sizeX; x <= _sizeX; x++)
         {
-            for (int y = -_sizeY; y <= _sizeY; y++)
+            for (float y = -_sizeY; y <= _sizeY; y++)
             {
-                float floatDistance = Vector2.Distance(centerPos, new Vector2(x, y));
+                float floatDistance = Vector2.Distance(_centerPos, new Vector2(x, y));
                 floatDistance = floatDistance / 2;
                 int intDistance = Mathf.RoundToInt(floatDistance);
 

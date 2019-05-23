@@ -6,6 +6,8 @@ using UnityEngine;
 [Serializable]
 public class Map
 {
+    public MainObject _mainObject;
+
     public string _name = "Default";
 
     public string _objectName = "Default Object";
