@@ -17,6 +17,9 @@ public class MainObject : Breakable
     [SerializeField]
     private List<Sprite> _sprites;
 
+    [SerializeField]
+    private Sprite _destroySprite;
+
     private string _name;
     private int _outlines = 0;
 
@@ -27,13 +30,16 @@ public class MainObject : Breakable
             base.RemoveDurability(damage, _equippedTools);
             _slider.maxValue = _durability;
             _slider.value = _durability - _currentDurability;
-            Debug.Log(GetDurabilityPercent() / ((_sprites.Count - 1) * (_sprites.Count - 1)));
-            _spriteRenderer.sprite = _sprites[(_sprites.Count - 1) * (_sprites.Count - 1)/Mathf.RoundToInt(GetDurabilityPercent())];
+            if (_currentDurability != 0)
+            {
+                _spriteRenderer.sprite = _sprites[Mathf.Clamp(Mathf.RoundToInt(GetDurabilityPercent() / 100f * _sprites.Count), 0, _sprites.Count - 1)];
+            }
         }
     }
 
     protected override void Remove()
     {
+        _spriteRenderer.sprite = _destroySprite;
         _manager.TriggerLevelEnd(false, _currentDurability);
     }
 
@@ -53,7 +59,7 @@ public class MainObject : Breakable
 
     private int GetDurabilityPercent()
     {
-        float val = _currentDurability / _durability * 100;
+        float val = (float)_currentDurability / (float)_durability * 100f;
         int intVal = Mathf.RoundToInt(val);
         return intVal;
     }
