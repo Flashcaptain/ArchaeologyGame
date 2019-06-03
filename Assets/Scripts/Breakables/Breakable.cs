@@ -9,7 +9,7 @@ public abstract class Breakable : MonoBehaviour
 
     protected int _currentDurability;
 
-    private void Start()
+    protected virtual void Start()
     {
         _currentDurability = _durability;
     }

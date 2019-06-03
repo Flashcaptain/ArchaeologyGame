@@ -7,7 +7,7 @@ public class Outline : Breakable
     [SerializeField]
     private MainObject _mainObject;
 
-    private void Start()
+    protected void Start()
     {
         _mainObject.AddChild();
     }
