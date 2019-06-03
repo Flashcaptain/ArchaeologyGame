@@ -17,12 +17,12 @@ public class MapObject : LockableObject
         if (thisMap._locked)
         {
             img.sprite = _lockedSprite;
-            text.text = "Locked";
+            //text.text = "Locked";
         }
         else
         {
             img.sprite = _unlockedSprite;
-            text.text = thisMap._name;
+            //text.text = thisMap._name;
 
             if (thisMap._completed)
             {

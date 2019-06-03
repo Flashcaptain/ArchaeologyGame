@@ -13,6 +13,8 @@ public class UnlockManager : MonoBehaviour
 
     private int _highestCompletedLevel = 0;
 
+    private string _mainSceneName = "MainScene";
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,7 +34,7 @@ public class UnlockManager : MonoBehaviour
         if (!pressedMap._locked)
         {
             _currentMap = pressedMap;
-            SceneManager.LoadScene(_currentMap._name);
+            SceneManager.LoadScene(_mainSceneName);
         }
     }
 

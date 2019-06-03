@@ -31,6 +31,12 @@ public class MainObject : Breakable
     private string _name;
     private int _outlines = 0;
 
+    private void Start()
+    {
+        _manager = FindObjectOfType<RemoveLayers>();
+        _slider = FindObjectOfType<Slider>();
+    }
+
     public override void RemoveDurability(int damage, Tools _equippedTools)
     {
         if (_equippedTools == Tools.Trowel || _equippedTools == Tools.Shovel)
