@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83365806022f4f547a71ff8d48fb51a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _durability: 100
+  _durability: 75
   _manager: {fileID: 0}
   _slider: {fileID: 0}
   _spriteRenderer: {fileID: 2363210501331770101}

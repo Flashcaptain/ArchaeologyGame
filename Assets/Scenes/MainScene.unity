@@ -390,6 +390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEndUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3743877140591297797, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3743877140591297793, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
         type: 3}
       propertyPath: m_LocalPosition.x
