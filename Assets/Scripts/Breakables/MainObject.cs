@@ -57,7 +57,7 @@ public class MainObject : Breakable
         }
     }
 
-    protected override void Remove()
+protected override void Remove()
     {
         _spriteRenderer.sprite = _destroySprite;
         _manager.TriggerLevelEnd(false, _currentDurability);
