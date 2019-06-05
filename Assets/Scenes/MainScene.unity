@@ -781,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sizeX: 9
   _sizeY: 6
-  _offSet: 2.5
+  _offSet: 3
   _grass:
   - {fileID: 576479668171756444, guid: cab22b510e79fe444b41b1ee882a1de1, type: 3}
   - {fileID: 576479668171756444, guid: ad92e6301dca1854a9aa2abf9f52b051, type: 3}
