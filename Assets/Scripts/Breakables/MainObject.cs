@@ -60,7 +60,7 @@ public class MainObject : Breakable
 protected override void Remove()
     {
         _spriteRenderer.sprite = _destroySprite;
-        _manager.TriggerLevelEnd(false, _currentDurability);
+        _manager.TriggerLevelEnd(false, GetDurabilityPercent());
     }
 
     public void AddChild()
@@ -73,11 +73,11 @@ protected override void Remove()
         _outlines--;
         if (_outlines == 0)
         {
-            _manager.TriggerLevelEnd(true, _currentDurability);
+            _manager.TriggerLevelEnd(true, GetDurabilityPercent());
         }
     }
 
-    private int GetDurabilityPercent()
+    public int GetDurabilityPercent()
     {
         float val = (float)_currentDurability / (float)_durability * 100f;
         int intVal = Mathf.RoundToInt(val);
