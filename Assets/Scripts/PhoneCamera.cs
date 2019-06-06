@@ -7,10 +7,18 @@ public class PhoneCamera : MonoBehaviour
     private static WebCamTexture _phoneCamera;
     public Texture _texture;
 
-    // Update is called once per frame
     void Start()
     {
-        _phoneCamera = new WebCamTexture();
+        string selectedDeviceName = "";
+        for (int i = 0; i < WebCamTexture.devices.Length-1; i++)
+        {
+            if (WebCamTexture.devices[i].isFrontFacing)
+            {
+                selectedDeviceName = WebCamTexture.devices[3].name;
+            }
+        }
+
+        _phoneCamera = new WebCamTexture(selectedDeviceName, 960, 640);
         GetComponent<Renderer>().material.mainTexture = _phoneCamera;
 
         _phoneCamera.Play();
