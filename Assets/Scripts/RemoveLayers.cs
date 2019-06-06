@@ -31,6 +31,9 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private Text _timeText;
 
+    [SerializeField]
+    private Text _timeTextPauseMenu;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
@@ -134,8 +137,6 @@ public class RemoveLayers : MonoBehaviour
 
     private IEnumerator Timer()
     {
-        yield return new WaitForSeconds(1);
-
         if (_timeSeconds == 0 && _timeMinutes == 0)
         {
             TriggerLevelEnd(false, 0);
@@ -167,6 +168,8 @@ public class RemoveLayers : MonoBehaviour
             {
                 _timeText.text = _timeMinutes + ":" + _timeSeconds;
             }
+            _timeTextPauseMenu.text = _timeText.text;
+            yield return new WaitForSeconds(1);
             StartCoroutine(Timer());
         }
     }

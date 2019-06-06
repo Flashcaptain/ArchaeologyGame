@@ -14,7 +14,7 @@ public class PhoneCamera : MonoBehaviour
         {
             if (WebCamTexture.devices[i].isFrontFacing)
             {
-                selectedDeviceName = WebCamTexture.devices[3].name;
+                selectedDeviceName = WebCamTexture.devices[4].name;
             }
         }
 
