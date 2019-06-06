@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class CatalogManager : MonoBehaviour
 {
-    public static CatalogManager Instance;
-
     [SerializeField]
     private Image _objectImage;
 
