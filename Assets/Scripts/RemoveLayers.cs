@@ -34,9 +34,17 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private Text _timeTextPauseMenu;
 
+    [SerializeField]
+    private AudioClip _zoomSound;
+
+    [SerializeField]
+    private AudioClip _zoomOutSound;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
+
+    private AudioManager _audioManager;
 
     public void SelectTool(int tool)
     {
@@ -45,6 +53,7 @@ public class RemoveLayers : MonoBehaviour
 
     private void Start()
     {
+        _audioManager = FindObjectOfType<AudioManager>();
         Camera.main.orthographicSize = _defaultCameraSize;
         StartCoroutine(Timer());
     }
@@ -79,12 +88,14 @@ public class RemoveLayers : MonoBehaviour
                         Camera cam = Camera.main;
                         if (_zoomedIn)
                         {
+                            _audioManager.PlayAudio(_zoomOutSound);
                             cam.orthographicSize = _defaultCameraSize;
                             cam.transform.position = new Vector3(0, 0, cam.transform.position.z);
                             _zoomedIn = false;
                         }
                         else
                         {
+                            _audioManager.PlayAudio(_zoomSound);
                             _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -3.5f, 3.5f), Mathf.Clamp(_touchPos.x, -2f, 2f), cam.transform.position.z);
                             cam.orthographicSize /= _zoomMultiplier;
                             cam.transform.position = _touchPos;

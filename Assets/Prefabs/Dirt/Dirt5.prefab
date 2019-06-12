@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 293648a87141ddd40a143dd7507cc052, type: 3}
   _isGrass: 0
 --- !u!58 &8439853579282573983
 CircleCollider2D:
