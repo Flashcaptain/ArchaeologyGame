@@ -3831,11 +3831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 100
-<<<<<<< Updated upstream
   _interactSound: {fileID: 8300000, guid: d7647b55fd793704498f4dba9b78ba02, type: 3}
-=======
   _currentSprite: {fileID: 21300000, guid: 423db9b58f813904ba8ad37f0e25e213, type: 3}
->>>>>>> Stashed changes
   _manager: {fileID: 0}
   _slider: {fileID: 0}
   _spriteRenderer: {fileID: 8991333050452773343}
