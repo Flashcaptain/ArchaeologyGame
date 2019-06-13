@@ -16,5 +16,5 @@ public class Map
 
     public bool _completed = false;
 
-    public float _highscore = 0f;
+    public int _highscore = 0;
 }

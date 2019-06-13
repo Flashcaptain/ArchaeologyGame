@@ -1480,7 +1480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 200
+<<<<<<< Updated upstream
   _interactSound: {fileID: 8300000, guid: c1c99b486c974c54bbfe158ec918f280, type: 3}
+=======
+  _currentSprite: {fileID: 21300000, guid: 490c8f4bce171f344865f7d1a6890836, type: 3}
+>>>>>>> Stashed changes
   _manager: {fileID: 0}
   _slider: {fileID: 0}
   _spriteRenderer: {fileID: 2077934429311146141}
@@ -1492,6 +1496,7 @@ MonoBehaviour:
   _destroySprite: {fileID: 21300000, guid: f149456e5b18ce74cac47d34b6cefcba, type: 3}
   _camShakeIntensity: 55
   _camShakeDuration: 0.2
+  _name: Coin
 --- !u!60 &2077934429311146143
 PolygonCollider2D:
   m_ObjectHideFlags: 0

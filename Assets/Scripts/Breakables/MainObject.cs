@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainObject : Breakable
 {
+    public Sprite _currentSprite;
+
     [SerializeField]
     private RemoveLayers _manager;
 
@@ -28,8 +30,21 @@ public class MainObject : Breakable
     [SerializeField]
     private float _camShakeDuration = 0.2f;
 
+    [SerializeField]
     private string _name;
+
     private int _outlines = 0;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.C))
+        {
+            while (_outlines != 0)
+            {
+                RemoveChild();
+            }
+        }
+    }
 
     protected void Start()
     {
@@ -52,7 +67,8 @@ public class MainObject : Breakable
             _slider.value = _durability - _currentDurability;
             if (_currentDurability != 0)
             {
-                _spriteRenderer.sprite = _sprites[Mathf.Clamp(Mathf.RoundToInt(GetDurabilityPercent() / 100f * _sprites.Count), 0, _sprites.Count - 1)];
+                _currentSprite = _sprites[Mathf.Clamp(Mathf.RoundToInt(GetDurabilityPercent() / 100f * _sprites.Count), 0, _sprites.Count - 1)];
+                _spriteRenderer.sprite = _currentSprite;
             }
         }
     }
@@ -60,7 +76,7 @@ public class MainObject : Breakable
 protected override void Remove()
     {
         _spriteRenderer.sprite = _destroySprite;
-        _manager.TriggerLevelEnd(false, GetDurabilityPercent());
+        _manager.TriggerLevelEnd(false, GetDurabilityPercent(), _name, _currentSprite);
     }
 
     public void AddChild()
@@ -73,7 +89,7 @@ protected override void Remove()
         _outlines--;
         if (_outlines == 0)
         {
-            _manager.TriggerLevelEnd(true, GetDurabilityPercent());
+            _manager.TriggerLevelEnd(true, GetDurabilityPercent(), _name, _currentSprite);
         }
     }
 

@@ -40,6 +40,9 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private AudioClip _zoomOutSound;
 
+    [SerializeField]
+    private Sprite _hourGlass;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
@@ -64,7 +67,6 @@ public class RemoveLayers : MonoBehaviour
         {
             if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0))
             {                
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
                 Vector3 _touchPos = TouchManager.Instance.GetTouchPosition();
                 
                 RaycastHit2D hit = Physics2D.Raycast(_touchPos, Vector2.zero);
@@ -111,7 +113,7 @@ public class RemoveLayers : MonoBehaviour
         }
     }
 
-    public void TriggerLevelEnd(bool victory, int percentage)
+    public void TriggerLevelEnd(bool victory, int percentage, string name, Sprite image)
     {
         _gameInProgress = false;
         _levelEndUI.SetActive(true);
@@ -119,16 +121,19 @@ public class RemoveLayers : MonoBehaviour
 
         if (victory)
         {
-            ui._titleText.text = "Victory";
-            ui._durabilityText.text = "The value remaining value is " + percentage + "%";
+            ui._titleVictory.SetActive(true);
+            ui._durabilityText.text = percentage + "%";
+            ui._nameText.text = name;
             ui._backToMapButton.SetActive(true);
             UnlockManager.Instance.CompleteCurrentLevel(percentage);
         }
         else
         {
-            ui._titleText.text = "Defeat";
+            ui._titleDefeat.SetActive(true);
             ui._retryButton.SetActive(true);
         }
+
+        ui._objectImage.sprite = image;
     }
 
     public void PressEndSceneButton(string sceneName)
@@ -150,9 +155,9 @@ public class RemoveLayers : MonoBehaviour
     {
         if (_timeSeconds == 0 && _timeMinutes == 0)
         {
-            TriggerLevelEnd(false, 0);
+            TriggerLevelEnd(false, 0, "", _hourGlass);
             LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
-            ui._durabilityText.text = "You ran out of time.";
+            ui._nameText.text = "times up!";
         }
         else if (_gameInProgress)
         {

@@ -12,7 +12,7 @@ public class MapObject : LockableObject
 
     protected override void CheckLock(Map thisMap, Text text, Image img)
     {
-        base.CheckLock(thisMap, text, img);
+        //base.CheckLock(thisMap, text, img);
 
         if (thisMap._locked)
         {
@@ -26,7 +26,7 @@ public class MapObject : LockableObject
 
             if (thisMap._completed)
             {
-                text.text += " " + thisMap._highscore;
+                text.text = "" + thisMap._highscore;
             }
         }
     }

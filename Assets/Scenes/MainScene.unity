@@ -1560,6 +1560,7 @@ PrefabInstance:
       objectReference: {fileID: 1043738759}
     - target: {fileID: 2397026324330435402, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
         type: 3}
+<<<<<<< Updated upstream
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -1583,6 +1584,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+=======
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1043738759}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cb7bbb6d0fb046448add9a93bdb18b4, type: 3}
 --- !u!1 &538712734 stripped
@@ -1935,8 +1941,12 @@ MonoBehaviour:
   _timeSeconds: 10
   _timeText: {fileID: 494079001}
   _timeTextPauseMenu: {fileID: 444301308}
+<<<<<<< Updated upstream
   _zoomSound: {fileID: 8300000, guid: cc667944844b1084aaf99464e9c4160f, type: 3}
   _zoomOutSound: {fileID: 8300000, guid: 5cc9a91a0761cbe4482625da889f6cdb, type: 3}
+=======
+  _hourGlass: {fileID: 21300000, guid: 771a6fbdd5adb4988896f45c9840f579, type: 3}
+>>>>>>> Stashed changes
 --- !u!4 &1043738760
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,6 +2407,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 494079002}
+    - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 494079005}
+    - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 494079004}
+    - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 494079003}
     - target: {fileID: 3930806972016642425, guid: 1aaafada191d743b9be7fc7b0d60269c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2502,6 +2532,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2562,6 +2593,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 6044750198886436233, guid: 1aaafada191d743b9be7fc7b0d60269c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

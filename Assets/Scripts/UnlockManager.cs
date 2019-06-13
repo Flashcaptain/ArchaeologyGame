@@ -25,8 +25,26 @@ public class UnlockManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
+        }
+        _highestCompletedLevel = PlayerPrefs.GetInt("LevelsCompleted");
+
+        for (int i = 0; i < _highestCompletedLevel; i++)
+        {
+            _maps[i]._completed = true;
+        }
+        for (int i = 0; i < _highestCompletedLevel + 1; i++)
+        {
+            _maps[i]._locked = false;
+        }
+
+        for (int i = 0; i < _maps.Count; i++)
+        {
+            _maps[i]._highscore = PlayerPrefs.GetInt("highScoresList_" + i);
+            Debug.Log(_maps[i]._highscore);
         }
     }
+
 
     public void PressMapButton(int index)
     {
@@ -45,6 +63,7 @@ public class UnlockManager : MonoBehaviour
         if (index > _highestCompletedLevel)
         {
             _highestCompletedLevel = index;
+            PlayerPrefs.SetInt("LevelsCompleted", _highestCompletedLevel + 1);
         }
 
         _maps[index]._completed = true;
@@ -53,6 +72,11 @@ public class UnlockManager : MonoBehaviour
             _maps[index]._highscore = highscore;
         }
         _maps[index + 1]._locked = false;
+
+        for (int i = 0; i < _maps.Count; i++)
+        {
+            PlayerPrefs.SetInt("highScoresList_" + i, _maps[i]._highscore);
+        }
     }
 
     public Map GetMap(int index)
