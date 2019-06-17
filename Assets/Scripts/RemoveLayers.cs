@@ -108,7 +108,10 @@ public class RemoveLayers : MonoBehaviour
                 }
 
                 else return;
-                RemoveLayer(hit, _toolDamage[(int)_equippedTools]);
+                if (!EventSystem.current.IsPointerOverGameObject(0))
+                {
+                    RemoveLayer(hit, _toolDamage[(int)_equippedTools]);
+                }
             }
         }
     }
