@@ -817,8 +817,6 @@ MonoBehaviour:
   _levelEndUI: {fileID: 538712734}
   _defaultCameraSize: 5
   _zoomMultiplier: 2
-  _timeMinutes: 2
-  _timeSeconds: 10
   _timeText: {fileID: 494079001}
   _timeTextPauseMenu: {fileID: 444301308}
   _zoomSound: {fileID: 8300000, guid: cc667944844b1084aaf99464e9c4160f, type: 3}
@@ -1157,7 +1155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sizeX: 9
   _sizeY: 6
-  _offSet: 3
+  _offSet: 3.75
   _grass:
   - {fileID: 576479668171756444, guid: cab22b510e79fe444b41b1ee882a1de1, type: 3}
   - {fileID: 576479668171756444, guid: ad92e6301dca1854a9aa2abf9f52b051, type: 3}
