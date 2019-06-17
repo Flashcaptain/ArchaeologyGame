@@ -17,4 +17,8 @@ public class Map
     public bool _completed = false;
 
     public int _highscore = 0;
+
+    public int _timeInSeconds = 0;
+
+    public int _timeInMinutes = 0;
 }

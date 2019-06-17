@@ -23,12 +23,6 @@ public class RemoveLayers : MonoBehaviour
     private float _zoomMultiplier = 2f;
 
     [SerializeField]
-    private int _timeMinutes;
-
-    [SerializeField]
-    private int _timeSeconds;
-
-    [SerializeField]
     private Text _timeText;
 
     [SerializeField]
@@ -43,6 +37,10 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private Sprite _hourGlass;
 
+    private int _timeMinutes = 10;
+
+    private int _timeSeconds = 30;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
@@ -52,6 +50,12 @@ public class RemoveLayers : MonoBehaviour
     public void SelectTool(int tool)
     {
         _equippedTools = (Tools)tool;
+    }
+
+    private void Awake()
+    {
+        _timeMinutes = UnlockManager.Instance._currentMap._timeInMinutes;
+        _timeSeconds = UnlockManager.Instance._currentMap._timeInSeconds;
     }
 
     private void Start()

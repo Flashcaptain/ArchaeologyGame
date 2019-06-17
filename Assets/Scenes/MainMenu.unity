@@ -1293,6 +1293,8 @@ MonoBehaviour:
     _locked: 0
     _completed: 0
     _highscore: 0
+    _timeInSeconds: 30
+    _timeInMinutes: 6
   - _mainObject: {fileID: 8991333050452773342, guid: 46abaddd18697ca4d926228d3b199cee,
       type: 3}
     _name: Level2
@@ -1300,6 +1302,8 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
+    _timeInSeconds: 59
+    _timeInMinutes: 3
   - _mainObject: {fileID: 660855470983630283, guid: 202e9230e727e4562b08855cbbb14ad1,
       type: 3}
     _name: Level3
@@ -1307,6 +1311,8 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
+    _timeInSeconds: 59
+    _timeInMinutes: 2
   - _mainObject: {fileID: 2363210501331770102, guid: 3f44c37d4f6cf4efa9a97d2c6d595025,
       type: 3}
     _name: Level3
@@ -1314,6 +1320,8 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
+    _timeInSeconds: 0
+    _timeInMinutes: 0
   _currentMap:
     _mainObject: {fileID: 0}
     _name: Default
@@ -1321,6 +1329,8 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
+    _timeInSeconds: 30
+    _timeInMinutes: 1
 --- !u!4 &1619533450
 Transform:
   m_ObjectHideFlags: 0
