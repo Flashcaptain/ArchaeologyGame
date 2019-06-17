@@ -145,7 +145,7 @@ public class RemoveLayers : MonoBehaviour
 
     public void PressEndSceneButton(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(UnlockManager.Instance.LoadingScreen(sceneName));
     }
 
     private void RemoveLayer(RaycastHit2D hit, int damage)

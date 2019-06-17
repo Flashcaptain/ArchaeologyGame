@@ -1320,8 +1320,8 @@ MonoBehaviour:
     _locked: 1
     _completed: 0
     _highscore: 0
-    _timeInSeconds: 0
-    _timeInMinutes: 0
+    _timeInSeconds: 10
+    _timeInMinutes: 1
   _currentMap:
     _mainObject: {fileID: 0}
     _name: Default
@@ -1331,6 +1331,9 @@ MonoBehaviour:
     _highscore: 0
     _timeInSeconds: 30
     _timeInMinutes: 1
+  _loadingScreenObj: {fileID: 8290427474688191304, guid: abbd223499b8a514483c980fca5283e9,
+    type: 3}
+  _slider: {fileID: 0}
 --- !u!4 &1619533450
 Transform:
   m_ObjectHideFlags: 0

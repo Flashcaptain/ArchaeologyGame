@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PressMenuButton(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(UnlockManager.Instance.LoadingScreen(sceneName));
     }
 
     public void PressQuitButton()
