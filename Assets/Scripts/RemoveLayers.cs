@@ -35,6 +35,12 @@ public class RemoveLayers : MonoBehaviour
     private AudioClip _zoomOutSound;
 
     [SerializeField]
+    private AudioClip _fastSoundTrack;
+
+    [SerializeField]
+    private AudioSource _audioSource;
+
+    [SerializeField]
     private Sprite _hourGlass;
 
     private int _timeMinutes = 10;
@@ -69,7 +75,7 @@ public class RemoveLayers : MonoBehaviour
     {
         if (_gameInProgress)
         {
-            if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0))
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {                
                 Vector3 _touchPos = TouchManager.Instance.GetTouchPosition();
                 
@@ -190,6 +196,12 @@ public class RemoveLayers : MonoBehaviour
             else
             {
                 _timeText.text = _timeMinutes + ":" + _timeSeconds;
+            }
+            if (_timeMinutes == 0)
+            {
+                _timeText.color = Color.red;
+                _audioSource.clip = _fastSoundTrack;
+                _audioSource.Play();
             }
             _timeTextPauseMenu.text = _timeText.text;
             yield return new WaitForSeconds(1);

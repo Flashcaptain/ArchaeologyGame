@@ -765,6 +765,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1043738759}
+    - target: {fileID: 3743877139921281744, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743877139921281744, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2263246480903533317, guid: 2cb7bbb6d0fb046448add9a93bdb18b4,
         type: 3}
       propertyPath: m_IsActive
@@ -821,6 +831,8 @@ MonoBehaviour:
   _timeTextPauseMenu: {fileID: 444301308}
   _zoomSound: {fileID: 8300000, guid: cc667944844b1084aaf99464e9c4160f, type: 3}
   _zoomOutSound: {fileID: 8300000, guid: 5cc9a91a0761cbe4482625da889f6cdb, type: 3}
+  _fastSoundTrack: {fileID: 8300000, guid: ff7ae19266bb1d64d888766572138d5c, type: 3}
+  _audioSource: {fileID: 1412305441}
   _hourGlass: {fileID: 21300000, guid: 771a6fbdd5adb4988896f45c9840f579, type: 3}
 --- !u!4 &1043738760
 Transform:
@@ -1007,6 +1019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412305442}
   - component: {fileID: 1412305441}
+  - component: {fileID: 1412305443}
   m_Layer: 0
   m_Name: Soundtrack
   m_TagString: Untagged
@@ -1026,7 +1039,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bba2dff100516d641ab51033867420df, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1124,6 +1137,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!170 &1412305443
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412305440}
+  m_Enabled: 1
+  m_DistortionLevel: 0.5
 --- !u!1 &2023532496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930806972016642429, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3930806970577132225, guid: 1aaafada191d743b9be7fc7b0d60269c,
         type: 3}
@@ -1333,6 +1360,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1043738759}
+    - target: {fileID: 3930806970577132231, guid: 1aaafada191d743b9be7fc7b0d60269c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aaafada191d743b9be7fc7b0d60269c, type: 3}
 --- !u!1 &7308863198979877435 stripped

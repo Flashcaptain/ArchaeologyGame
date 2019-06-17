@@ -9,7 +9,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudio(AudioClip audioClip)
     {
-        _audioSource.clip = audioClip;
-        _audioSource.Play();
+        if (_audioSource.isPlaying)
+        {
+            _audioSource.clip = audioClip;
+            _audioSource.Play();
+        }
     }
 }
