@@ -15,9 +15,6 @@ public class UnlockManager : MonoBehaviour
     [SerializeField]
     private GameObject _loadingScreenObj;
 
-    [SerializeField]
-    private Slider _slider;
-
     private int _highestCompletedLevel = 0;
 
     private string _mainSceneName = "MainScene";
@@ -101,15 +98,10 @@ public class UnlockManager : MonoBehaviour
         async = SceneManager.LoadSceneAsync(lvlName);
         async.allowSceneActivation = false;
 
-        _slider = _loadingScreenObj.GetComponentInChildren<Slider>();
-        _slider.value = 0.0f;
-
         while (!async.isDone)
         {
-            _slider.value = async.progress;
             if (async.progress == 0.9f)
             {
-                _slider.value = 1f;
                 async.allowSceneActivation = true;
             }
             yield return null;
