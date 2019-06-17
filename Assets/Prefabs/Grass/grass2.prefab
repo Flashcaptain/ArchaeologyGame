@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 10
-  _interactSound: {fileID: 8300000, guid: 9787d4b865931d842a6e9a2b73c76df8, type: 3}
+  _interactSound: {fileID: 8300000, guid: 630c8dacf4cabef469df70d74c997ca6, type: 3}
   _isGrass: 1
 --- !u!60 &2521497592419027796
 PolygonCollider2D:

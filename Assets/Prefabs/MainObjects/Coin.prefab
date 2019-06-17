@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 200
-  _interactSound: {fileID: 8300000, guid: c1c99b486c974c54bbfe158ec918f280, type: 3}
+  _interactSound: {fileID: 8300000, guid: 93d0d4333dac5674291ddac9a90517cf, type: 3}
   _currentSprite: {fileID: 21300000, guid: 490c8f4bce171f344865f7d1a6890836, type: 3}
   _manager: {fileID: 0}
   _slider: {fileID: 0}
