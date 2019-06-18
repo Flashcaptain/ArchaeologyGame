@@ -35,6 +35,12 @@ public class RemoveLayers : MonoBehaviour
     private AudioClip _zoomOutSound;
 
     [SerializeField]
+    private AudioClip _victorySound;
+
+    [SerializeField]
+    private AudioClip _defeatSound;
+
+    [SerializeField]
     private AudioClip _fastSoundTrack;
 
     [SerializeField]
@@ -100,14 +106,14 @@ public class RemoveLayers : MonoBehaviour
                         Camera cam = Camera.main;
                         if (_zoomedIn)
                         {
-                            _audioManager.PlayAudio(_zoomOutSound);
+                            _audioManager.PlayAudio(_zoomOutSound ,true);
                             cam.orthographicSize = _defaultCameraSize;
                             cam.transform.position = new Vector3(0, 0, cam.transform.position.z);
                             _zoomedIn = false;
                         }
                         else
                         {
-                            _audioManager.PlayAudio(_zoomSound);
+                            _audioManager.PlayAudio(_zoomSound , true);
                             _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -3.5f, 3.5f), Mathf.Clamp(_touchPos.x, -2f, 2f), cam.transform.position.z);
                             cam.orthographicSize /= _zoomMultiplier;
                             cam.transform.position = _touchPos;
@@ -139,11 +145,13 @@ public class RemoveLayers : MonoBehaviour
             ui._nameText.text = name;
             ui._backToMapButton.SetActive(true);
             UnlockManager.Instance.CompleteCurrentLevel(percentage);
+            _audioManager.PlayAudio(_victorySound , true);
         }
         else
         {
             ui._titleDefeat.SetActive(true);
             ui._retryButton.SetActive(true);
+            _audioManager.PlayAudio(_defeatSound, true);
         }
 
         ui._objectImage.sprite = image;

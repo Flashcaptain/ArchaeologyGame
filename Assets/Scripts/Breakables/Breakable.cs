@@ -22,7 +22,7 @@ public abstract class Breakable : MonoBehaviour
 
     public virtual void RemoveDurability(int damage, Tools _equippedTools)
     {
-        _audioManager.PlayAudio(_interactSound);
+        _audioManager.PlayAudio(_interactSound , false);
         _currentDurability -= damage;
         if (_currentDurability <= 0)
         {
