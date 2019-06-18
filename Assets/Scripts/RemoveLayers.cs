@@ -48,9 +48,6 @@ public class RemoveLayers : MonoBehaviour
     private AudioClip _defeatSound;
 
     [SerializeField]
-    private AudioClip _fastSoundTrack;
-
-    [SerializeField]
     private AudioSource _audioSource;
 
     [SerializeField]
@@ -215,8 +212,7 @@ public class RemoveLayers : MonoBehaviour
             if (_timeMinutes == 0)
             {
                 _timeText.color = Color.red;
-                _audioSource.clip = _fastSoundTrack;
-                _audioSource.Play();
+                _audioSource.pitch = _audioSource.pitch * 2;
             }
             _timeTextPauseMenu.text = _timeText.text;
             yield return new WaitForSeconds(1);
