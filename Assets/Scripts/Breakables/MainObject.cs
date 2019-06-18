@@ -113,7 +113,7 @@ protected override void Remove()
             float x = Random.Range(-1f, 1f) * ((float)damage / (100 - _camShakeIntensity));
             float y = Random.Range(-1f, 1f) * ((float)damage / (100 - _camShakeIntensity));
 
-            camera.transform.localPosition = new Vector3(x, y, originalPos.z);
+            camera.transform.localPosition = new Vector3(originalPos.x + x,originalPos.y + y, originalPos.z);
 
             elapsed += Time.deltaTime;
 
