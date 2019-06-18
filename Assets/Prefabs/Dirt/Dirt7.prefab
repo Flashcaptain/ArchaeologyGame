@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 576479668171756445}
   - component: {fileID: 576479668171756446}
   - component: {fileID: 576479668171756444}
-  - component: {fileID: 8439853579282573983}
+  - component: {fileID: 1036118368940964887}
   m_Layer: 0
   m_Name: Dirt7
   m_TagString: Untagged
@@ -96,8 +96,8 @@ MonoBehaviour:
   _durability: 1
   _interactSound: {fileID: 8300000, guid: abd77059e5ed14f47ae94e3d30d8fd02, type: 3}
   _isGrass: 0
---- !u!58 &8439853579282573983
-CircleCollider2D:
+--- !u!61 &1036118368940964887
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,6 +109,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 0}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 3.8999999}
+    newSize: {x: 4, y: 3.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Size: {x: 3.1, y: 3.1}
+  m_EdgeRadius: 0
