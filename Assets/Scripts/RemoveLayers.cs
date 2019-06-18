@@ -23,6 +23,13 @@ public class RemoveLayers : MonoBehaviour
     private float _zoomMultiplier = 2f;
 
     [SerializeField]
+    private float _zoomLimitX = 5.1f;
+
+    [SerializeField]
+    private float _zoomLimitY = 2.9f;
+
+
+    [SerializeField]
     private Text _timeText;
 
     [SerializeField]
@@ -114,7 +121,7 @@ public class RemoveLayers : MonoBehaviour
                         else
                         {
                             _audioManager.PlayAudio(_zoomSound , true);
-                            _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -3.5f, 3.5f), Mathf.Clamp(_touchPos.x, -2f, 2f), cam.transform.position.z);
+                            _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -_zoomLimitX, _zoomLimitX), Mathf.Clamp(_touchPos.y, -_zoomLimitY, _zoomLimitY), cam.transform.position.z);
                             cam.orthographicSize /= _zoomMultiplier;
                             cam.transform.position = _touchPos;
                             _zoomedIn = true;
