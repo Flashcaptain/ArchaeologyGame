@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2896830708582528905, guid: 5a748cf05e4643743a4a3a0c39e0422d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2896830708582528949, guid: 5a748cf05e4643743a4a3a0c39e0422d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -843,6 +848,7 @@ MonoBehaviour:
   _audioSource: {fileID: 1412305441}
   _musicAmplifier: 1.01
   _hourGlass: {fileID: 21300000, guid: 771a6fbdd5adb4988896f45c9840f579, type: 3}
+  _levelUI: {fileID: 1587660823}
 --- !u!4 &1043738760
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,6 +1151,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1587660823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2896830708582528905, guid: 5a748cf05e4643743a4a3a0c39e0422d,
+    type: 3}
+  m_PrefabInstance: {fileID: 494079000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2023532496
 GameObject:
   m_ObjectHideFlags: 0

@@ -56,6 +56,9 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private Sprite _hourGlass;
 
+    [SerializeField]
+    private GameObject _levelUI;
+
     private int _timeMinutes = 10;
 
     private int _timeSeconds = 30;
@@ -141,6 +144,8 @@ public class RemoveLayers : MonoBehaviour
 
     public void TriggerLevelEnd(bool victory, int percentage, string name, Sprite image)
     {
+        _levelUI.SetActive(false);
+
         _gameInProgress = false;
         _levelEndUI.SetActive(true);
         LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
