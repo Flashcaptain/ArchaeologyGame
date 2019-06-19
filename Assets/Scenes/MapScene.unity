@@ -618,7 +618,7 @@ MonoBehaviour:
   orthographicSizeMin: 3
   orthographicSizeMax: 7
   xMax: 11
-  yMax: 6.28
+  yMax: 6.25
 --- !u!1 &1039428416
 GameObject:
   m_ObjectHideFlags: 0
