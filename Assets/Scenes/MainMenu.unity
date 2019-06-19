@@ -1665,6 +1665,15 @@ MonoBehaviour:
     _highscore: 0
     _timeInSeconds: 10
     _timeInMinutes: 1
+  - _mainObject: {fileID: 2077934429311146142, guid: 96e12d89634aff049ac4c9d9bebf9220,
+      type: 3}
+    _name: NoPlayable
+    _objectName: Error
+    _locked: 1
+    _completed: 0
+    _highscore: 0
+    _timeInSeconds: 0
+    _timeInMinutes: 0
   _currentMap:
     _mainObject: {fileID: 0}
     _name: Default
