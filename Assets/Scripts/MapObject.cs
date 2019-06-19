@@ -26,7 +26,7 @@ public class MapObject : LockableObject
 
             if (thisMap._completed)
             {
-                text.text = "" + thisMap._highscore;
+                text.text = thisMap._objectName + "\n" + thisMap._highscore + "%";
             }
         }
     }
