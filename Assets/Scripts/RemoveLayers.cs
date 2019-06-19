@@ -51,6 +51,9 @@ public class RemoveLayers : MonoBehaviour
     private AudioSource _audioSource;
 
     [SerializeField]
+    private float _musicAmplifier;
+    
+    [SerializeField]
     private Sprite _hourGlass;
 
     private int _timeMinutes = 10;
@@ -212,7 +215,8 @@ public class RemoveLayers : MonoBehaviour
             if (_timeMinutes == 0)
             {
                 _timeText.color = Color.red;
-                _audioSource.pitch = _audioSource.pitch * 2;
+                if (_audioSource.pitch < 2)
+                _audioSource.pitch = _audioSource.pitch * _musicAmplifier;
             }
             _timeTextPauseMenu.text = _timeText.text;
             yield return new WaitForSeconds(1);
