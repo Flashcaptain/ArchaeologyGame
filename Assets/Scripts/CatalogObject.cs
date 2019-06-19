@@ -9,6 +9,7 @@ public class CatalogObject : MonoBehaviour
 
     public string _objectName;
 
+    [TextArea]
     public string _catalogEntry;
 
     public int _index;

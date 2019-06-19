@@ -166,7 +166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: e9d033dee081b4557ab4e4226b4a769a, type: 3}
   _objectName: Ring
-  _catalogEntry: This is a ring. You can wear it to increase your magic defense.
+  _catalogEntry: "Another Victoria themed ring. Dug up from the roman era. Made from
+    sardonyx, the white layer was the cut out of the goddess placed on a dark blue
+    background.\r\n\nThis ring was another testament to the goddess Victoria.\r\n"
   _index: 2
 --- !u!114 &182599274
 MonoBehaviour:
@@ -399,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -72.38}
-  m_SizeDelta: {x: 196.6, y: 173.07}
+  m_AnchoredPosition: {x: 0, y: -63.69}
+  m_SizeDelta: {x: 196.6, y: 190.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317933419
 MonoBehaviour:
@@ -1312,7 +1314,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 490c8f4bce171f344865f7d1a6890836, type: 3}
   _objectName: Coin
-  _catalogEntry: This is a coin. Hey Lex.
+  _catalogEntry: "A Penny with a double side signature on either side. Dated 1643,
+    made from latin coper.\r\n\r\nFound in 1990 during the restoration of the Binnendieze
+    at the Nieuwstraat near the Predikheren monastery. This coin was probably intended
+    as propaganda for the Catholic faith in the period (after 1629) that the practice
+    of this religion was prohibited.\r\n"
   _index: 0
 --- !u!82 &875142165
 AudioSource:
@@ -1694,8 +1700,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: ea85b1129672c4d99ba6f271657bd7ab, type: 3}
   _objectName: Green banana
-  _catalogEntry: This is a green banana. Because it remained in the ground for so
-    long it started turning green. The white part is moldy fungus.
+  _catalogEntry: "A Victoria themed ring. Dug up around the 90\u2019s. Made from white
+    glass paste as the white figure and green glass as the background.\r\n\r\nWhile
+    most things around the roman era were indeed male themed which was due to the
+    war inspired Hercules pieces. The goddess Victoria was displayed on this ring.
+    This is made apparent by the clear imaginary of a lady writing a horse cartel.
+    \r\n"
   _index: 3
 --- !u!114 &1517263801
 MonoBehaviour:
@@ -2256,7 +2266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: f299c9f40041042c3acb9c9fcc6f4da5, type: 3}
   _objectName: Lavabo
-  _catalogEntry: This is a Lavabo. It's a bo for lava.
+  _catalogEntry: "A red fired pottery. Dated from the first half of the 16th century.
+    Dug up in Choorstraat excavation, 2000.\r\n\nA kettle with two pouring openings
+    with no legs or a stand ring, which would be hung above a washing bowl. Lavabo
+    means \u2018I will wash in Latin\u2019 and was used to wash hands before meals.\r\n"
   _index: 1
 --- !u!82 &2023255194
 AudioSource:
