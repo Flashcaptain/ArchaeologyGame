@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a67848f08e4ad41a5b7b977023dc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockedSprite: {fileID: 21300000, guid: b7213bfa9e2021f449fc69ea40c1870c, type: 3}
+  _lockedSprite: {fileID: 21300000, guid: f817675546c37496991915818fc1aaa1, type: 3}
   _unlockedSprite: {fileID: 21300000, guid: e19b5b7f29a13384883f956ebc028f8c, type: 3}
   _index: 2
 --- !u!114 &1039428419
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a67848f08e4ad41a5b7b977023dc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockedSprite: {fileID: 21300000, guid: b7213bfa9e2021f449fc69ea40c1870c, type: 3}
+  _lockedSprite: {fileID: 21300000, guid: f817675546c37496991915818fc1aaa1, type: 3}
   _unlockedSprite: {fileID: 21300000, guid: e19b5b7f29a13384883f956ebc028f8c, type: 3}
   _index: 3
 --- !u!114 &1200007658
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a67848f08e4ad41a5b7b977023dc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockedSprite: {fileID: 21300000, guid: b7213bfa9e2021f449fc69ea40c1870c, type: 3}
+  _lockedSprite: {fileID: 21300000, guid: f817675546c37496991915818fc1aaa1, type: 3}
   _unlockedSprite: {fileID: 21300000, guid: e19b5b7f29a13384883f956ebc028f8c, type: 3}
   _index: 0
 --- !u!1 &1226440372
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a67848f08e4ad41a5b7b977023dc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockedSprite: {fileID: 21300000, guid: b7213bfa9e2021f449fc69ea40c1870c, type: 3}
+  _lockedSprite: {fileID: 21300000, guid: f817675546c37496991915818fc1aaa1, type: 3}
   _unlockedSprite: {fileID: 21300000, guid: e19b5b7f29a13384883f956ebc028f8c, type: 3}
   _index: 1
 --- !u!1 &1644891063
