@@ -20,5 +20,6 @@ public class ResetScript : MonoBehaviour
     public void ResetProgress()
     {
         PlayerPrefs.DeleteAll();
+        UnlockManager.Instance.Reset();
     }
 }

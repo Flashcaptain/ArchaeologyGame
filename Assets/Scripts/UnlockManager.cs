@@ -51,6 +51,17 @@ public class UnlockManager : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        for (int i = 0; i < _maps.Count; i++)
+        {
+            _maps[i]._locked = true;
+            _maps[i]._completed = false;
+            _maps[i]._highscore = 0;
+        }
+        _maps[0]._locked = false;
+    }
+
 
     public void PressMapButton(int index)
     {
