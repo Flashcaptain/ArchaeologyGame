@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83365806022f4f547a71ff8d48fb51a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _durability: 75
+  _durability: 25
   _interactSound: {fileID: 8300000, guid: 93d0d4333dac5674291ddac9a90517cf, type: 3}
   _currentSprite: {fileID: 21300000, guid: ea85b1129672c4d99ba6f271657bd7ab, type: 3}
   _manager: {fileID: 0}
