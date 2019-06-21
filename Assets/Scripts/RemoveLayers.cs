@@ -23,10 +23,11 @@ public class RemoveLayers : MonoBehaviour
     private float _zoomMultiplier = 2f;
 
     [SerializeField]
-    private int _timeMinutes;
+    private float _zoomLimitX = 5.1f;
 
     [SerializeField]
-    private int _timeSeconds;
+    private float _zoomLimitY = 2.9f;
+
 
     [SerializeField]
     private Text _timeText;
@@ -34,17 +35,54 @@ public class RemoveLayers : MonoBehaviour
     [SerializeField]
     private Text _timeTextPauseMenu;
 
+    [SerializeField]
+    private AudioClip _zoomSound;
+
+    [SerializeField]
+    private AudioClip _zoomOutSound;
+
+    [SerializeField]
+    private AudioClip _victorySound;
+
+    [SerializeField]
+    private AudioClip _defeatSound;
+
+    [SerializeField]
+    private AudioSource _audioSource;
+
+    [SerializeField]
+    private float _musicAmplifier;
+    
+    [SerializeField]
+    private Sprite _hourGlass;
+
+    [SerializeField]
+    private GameObject _levelUI;
+
+    private int _timeMinutes = 10;
+
+    private int _timeSeconds = 30;
+
     private bool _gameInProgress = true;
 
     private bool _zoomedIn = false;
+
+    private AudioManager _audioManager;
 
     public void SelectTool(int tool)
     {
         _equippedTools = (Tools)tool;
     }
 
+    private void Awake()
+    {
+        _timeMinutes = UnlockManager.Instance._currentMap._timeInMinutes;
+        _timeSeconds = UnlockManager.Instance._currentMap._timeInSeconds;
+    }
+
     private void Start()
     {
+        _audioManager = FindObjectOfType<AudioManager>();
         Camera.main.orthographicSize = _defaultCameraSize;
         StartCoroutine(Timer());
     }
@@ -53,9 +91,8 @@ public class RemoveLayers : MonoBehaviour
     {
         if (_gameInProgress)
         {
-            if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0))
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {                
-                //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
                 Vector3 _touchPos = TouchManager.Instance.GetTouchPosition();
                 
                 RaycastHit2D hit = Physics2D.Raycast(_touchPos, Vector2.zero);
@@ -79,13 +116,15 @@ public class RemoveLayers : MonoBehaviour
                         Camera cam = Camera.main;
                         if (_zoomedIn)
                         {
+                            _audioManager.PlayAudio(_zoomOutSound ,true);
                             cam.orthographicSize = _defaultCameraSize;
                             cam.transform.position = new Vector3(0, 0, cam.transform.position.z);
                             _zoomedIn = false;
                         }
                         else
                         {
-                            _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -3.5f, 3.5f), Mathf.Clamp(_touchPos.x, -2f, 2f), cam.transform.position.z);
+                            _audioManager.PlayAudio(_zoomSound , true);
+                            _touchPos = new Vector3(Mathf.Clamp(_touchPos.x, -_zoomLimitX, _zoomLimitX), Mathf.Clamp(_touchPos.y, -_zoomLimitY, _zoomLimitY), cam.transform.position.z);
                             cam.orthographicSize /= _zoomMultiplier;
                             cam.transform.position = _touchPos;
                             _zoomedIn = true;
@@ -95,34 +134,44 @@ public class RemoveLayers : MonoBehaviour
                 }
 
                 else return;
-                RemoveLayer(hit, _toolDamage[(int)_equippedTools]);
+                if (!EventSystem.current.IsPointerOverGameObject(0))
+                {
+                    RemoveLayer(hit, _toolDamage[(int)_equippedTools]);
+                }
             }
         }
     }
 
-    public void TriggerLevelEnd(bool victory, int percentage)
+    public void TriggerLevelEnd(bool victory, int percentage, string name, Sprite image)
     {
+        _levelUI.SetActive(false);
+
         _gameInProgress = false;
         _levelEndUI.SetActive(true);
         LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
 
         if (victory)
         {
-            ui._titleText.text = "Victory";
-            ui._durabilityText.text = "The value remaining value is " + percentage + "%";
+            ui._titleVictory.SetActive(true);
+            ui._durabilityText.text = percentage + "%";
+            ui._nameText.text = name;
             ui._backToMapButton.SetActive(true);
             UnlockManager.Instance.CompleteCurrentLevel(percentage);
+            _audioManager.PlayAudio(_victorySound , true);
         }
         else
         {
-            ui._titleText.text = "Defeat";
+            ui._titleDefeat.SetActive(true);
             ui._retryButton.SetActive(true);
+            _audioManager.PlayAudio(_defeatSound, true);
         }
+
+        ui._objectImage.sprite = image;
     }
 
     public void PressEndSceneButton(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(UnlockManager.Instance.LoadingScreen(sceneName));
     }
 
     private void RemoveLayer(RaycastHit2D hit, int damage)
@@ -139,9 +188,9 @@ public class RemoveLayers : MonoBehaviour
     {
         if (_timeSeconds == 0 && _timeMinutes == 0)
         {
-            TriggerLevelEnd(false, 0);
+            TriggerLevelEnd(false, 0, "", _hourGlass);
             LevelEndUI ui = _levelEndUI.GetComponent<LevelEndUI>();
-            ui._durabilityText.text = "You ran out of time.";
+            ui._nameText.text = "times up!";
         }
         else if (_gameInProgress)
         {
@@ -167,6 +216,12 @@ public class RemoveLayers : MonoBehaviour
             else
             {
                 _timeText.text = _timeMinutes + ":" + _timeSeconds;
+            }
+            if (_timeMinutes == 0)
+            {
+                _timeText.color = Color.red;
+                if (_audioSource.pitch < 2)
+                _audioSource.pitch = _audioSource.pitch * _musicAmplifier;
             }
             _timeTextPauseMenu.text = _timeText.text;
             yield return new WaitForSeconds(1);

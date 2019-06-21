@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470264893369
 CircleCollider2D:
@@ -205,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470266684864
 CircleCollider2D:
@@ -316,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470320213627
 CircleCollider2D:
@@ -427,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470362678030
 CircleCollider2D:
@@ -538,6 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470531771596
 CircleCollider2D:
@@ -649,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470538809978
 CircleCollider2D:
@@ -760,6 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470633001707
 CircleCollider2D:
@@ -871,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470685674074
 CircleCollider2D:
@@ -982,6 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470747577546
 CircleCollider2D:
@@ -1093,6 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470970129214
 CircleCollider2D:
@@ -1204,6 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855470982236405
 CircleCollider2D:
@@ -1349,7 +1360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83365806022f4f547a71ff8d48fb51a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _durability: 90
+  _durability: 50
+  _interactSound: {fileID: 8300000, guid: 93d0d4333dac5674291ddac9a90517cf, type: 3}
+  _currentSprite: {fileID: 21300000, guid: e9d033dee081b4557ab4e4226b4a769a, type: 3}
   _manager: {fileID: 0}
   _slider: {fileID: 0}
   _spriteRenderer: {fileID: 660855470983630280}
@@ -1361,6 +1374,7 @@ MonoBehaviour:
   _destroySprite: {fileID: 21300000, guid: 6976ab19b13434b23bb29f577f99b8da, type: 3}
   _camShakeIntensity: 55
   _camShakeDuration: 0.2
+  _name: Ring
 --- !u!60 &660855470983630282
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1813,6 +1827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471000670835
 CircleCollider2D:
@@ -1924,6 +1939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471071232616
 CircleCollider2D:
@@ -2035,6 +2051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471076075796
 CircleCollider2D:
@@ -2146,6 +2163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471145028956
 CircleCollider2D:
@@ -2257,6 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471196974955
 CircleCollider2D:
@@ -2368,6 +2387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471239980415
 CircleCollider2D:
@@ -2479,6 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471241079383
 CircleCollider2D:
@@ -2590,6 +2611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471241998654
 CircleCollider2D:
@@ -2701,6 +2723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471511808759
 CircleCollider2D:
@@ -2812,6 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471558188753
 CircleCollider2D:
@@ -2923,6 +2947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471579625650
 CircleCollider2D:
@@ -3034,6 +3059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471633027958
 CircleCollider2D:
@@ -3145,6 +3171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471657048578
 CircleCollider2D:
@@ -3256,6 +3283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471667006569
 CircleCollider2D:
@@ -3367,6 +3395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471744012789
 CircleCollider2D:
@@ -3478,6 +3507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471818951267
 CircleCollider2D:
@@ -3589,6 +3619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471889277009
 CircleCollider2D:
@@ -3700,6 +3731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471906432934
 CircleCollider2D:
@@ -3811,6 +3843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471974237010
 CircleCollider2D:
@@ -3922,6 +3955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855471993246357
 CircleCollider2D:
@@ -4033,6 +4067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855472092298000
 CircleCollider2D:
@@ -4144,6 +4179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855472182363572
 CircleCollider2D:
@@ -4255,6 +4291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855472268080598
 CircleCollider2D:
@@ -4366,6 +4403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _durability: 1
+  _interactSound: {fileID: 8300000, guid: 0b0412316e30f4440aabdfe3b42f70a9, type: 3}
   _mainObject: {fileID: 660855470983630283}
 --- !u!58 &660855472298188756
 CircleCollider2D:

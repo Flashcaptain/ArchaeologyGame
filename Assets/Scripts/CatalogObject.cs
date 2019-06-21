@@ -9,10 +9,10 @@ public class CatalogObject : MonoBehaviour
 
     public string _objectName;
 
+    [TextArea]
     public string _catalogEntry;
 
-    [SerializeField]
-    private int _index;
+    public int _index;
 
     protected void Start()
     {

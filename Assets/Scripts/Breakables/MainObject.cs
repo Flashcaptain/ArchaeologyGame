@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainObject : Breakable
 {
+    public Sprite _currentSprite;
+
     [SerializeField]
     private RemoveLayers _manager;
 
@@ -28,8 +30,21 @@ public class MainObject : Breakable
     [SerializeField]
     private float _camShakeDuration = 0.2f;
 
+    [SerializeField]
     private string _name;
+
     private int _outlines = 0;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.C))
+        {
+            while (_outlines != 0)
+            {
+                RemoveChild();
+            }
+        }
+    }
 
     protected void Start()
     {
@@ -52,7 +67,8 @@ public class MainObject : Breakable
             _slider.value = _durability - _currentDurability;
             if (_currentDurability != 0)
             {
-                _spriteRenderer.sprite = _sprites[Mathf.Clamp(Mathf.RoundToInt(GetDurabilityPercent() / 100f * _sprites.Count), 0, _sprites.Count - 1)];
+                _currentSprite = _sprites[Mathf.Clamp(Mathf.RoundToInt(GetDurabilityPercent() / 100f * _sprites.Count), 0, _sprites.Count - 1)];
+                _spriteRenderer.sprite = _currentSprite;
             }
         }
     }
@@ -60,7 +76,7 @@ public class MainObject : Breakable
 protected override void Remove()
     {
         _spriteRenderer.sprite = _destroySprite;
-        _manager.TriggerLevelEnd(false, _currentDurability);
+        _manager.TriggerLevelEnd(false, GetDurabilityPercent(), _name, _currentSprite);
     }
 
     public void AddChild()
@@ -73,11 +89,11 @@ protected override void Remove()
         _outlines--;
         if (_outlines == 0)
         {
-            _manager.TriggerLevelEnd(true, _currentDurability);
+            _manager.TriggerLevelEnd(true, GetDurabilityPercent(), _name, _currentSprite);
         }
     }
 
-    private int GetDurabilityPercent()
+    public int GetDurabilityPercent()
     {
         float val = (float)_currentDurability / (float)_durability * 100f;
         int intVal = Mathf.RoundToInt(val);
@@ -97,7 +113,7 @@ protected override void Remove()
             float x = Random.Range(-1f, 1f) * ((float)damage / (100 - _camShakeIntensity));
             float y = Random.Range(-1f, 1f) * ((float)damage / (100 - _camShakeIntensity));
 
-            camera.transform.localPosition = new Vector3(x, y, originalPos.z);
+            camera.transform.localPosition = new Vector3(originalPos.x + x,originalPos.y + y, originalPos.z);
 
             elapsed += Time.deltaTime;
 

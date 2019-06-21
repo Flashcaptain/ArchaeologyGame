@@ -1,32 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhoneCamera : MonoBehaviour
 {
-    private static WebCamTexture _phoneCamera;
     public Texture _texture;
+
+    [SerializeField]
+    private Text _countdownText;
+
+    private static WebCamTexture _phoneCamera;
 
     void Start()
     {
         string selectedDeviceName = "";
-        for (int i = 0; i < WebCamTexture.devices.Length-1; i++)
-        {
-            if (WebCamTexture.devices[i].isFrontFacing)
-            {
-                selectedDeviceName = WebCamTexture.devices[4].name;
-            }
-        }
+        selectedDeviceName = WebCamTexture.devices[WebCamTexture.devices.Length-1].name;
 
         _phoneCamera = new WebCamTexture(selectedDeviceName, 960, 640);
         GetComponent<Renderer>().material.mainTexture = _phoneCamera;
 
         _phoneCamera.Play();
-        Invoke("Pause", 1.5f);
+        StartCoroutine(Pause());
     }
 
-    private void Pause()
+    private IEnumerator Pause()
     {
+        _countdownText.text = "3";
+        yield return new WaitForSeconds(0.5f);
+        _countdownText.text = "2";
+        yield return new WaitForSeconds(0.5f);
+        _countdownText.text = "1";
+        yield return new WaitForSeconds(0.5f);
+        _countdownText.text = "";
         _phoneCamera.Pause();
         _texture = GetComponent<Renderer>().material.mainTexture;
     }

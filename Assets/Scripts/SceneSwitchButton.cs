@@ -5,6 +5,6 @@ public class SceneSwitchButton : MonoBehaviour
 {
     public void SwitchScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(UnlockManager.Instance.LoadingScreen(sceneName));
     }
 }
